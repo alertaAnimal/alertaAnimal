@@ -18,9 +18,8 @@ async function createReport(reportData) {
 
   }
 
-}
 
-createReport({
+  createReport({
   type: "lost",
   animal: "dog",
   description: "brown dog with collar",
@@ -29,3 +28,5 @@ createReport({
   timestamp: Date.now(),
   contact: ""
 });
+}
+
