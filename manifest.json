@@ -1,0 +1,9 @@
+{
+"name":"Animal Rescue",
+"short_name":"Rescue",
+"start_url":"index.html",
+"display":"standalone",
+"background_color":"#ffffff",
+"theme_color":"#ffffff",
+"icons":[]
+}

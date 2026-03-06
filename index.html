@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Animal Rescue</title>
+
+<link rel="stylesheet" href="css/styles.css">
+
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_KEY"></script>
+
+</head>
+
+<body>
+
+<header>
+<h1>Animal Rescue</h1>
+</header>
+
+<div id="map"></div>
+
+<button id="reportButton" onclick="location.href='report.html'">
+Reportar avistamiento
+</button>
+
+<script type="module">
+
+import { initFirebase } from "./js/firebase.js"
+import { initMap } from "./js/map.js"
+import { getDeviceId } from "./js/device.js"
+
+initFirebase()
+getDeviceId()
+initMap()
+
+</script>
+
+</body>
+</html>

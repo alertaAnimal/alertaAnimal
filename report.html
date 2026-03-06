@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<title>Reportar Animal</title>
+
+<link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+
+<h2>Reportar avistamiento</h2>
+
+<input type="file" id="imageInput" accept="image/*" capture="environment">
+
+<textarea id="description" placeholder="Descripción del animal"></textarea>
+
+<button id="publishButton">Publicar</button>
+
+<script type="module">
+
+import { initFirebase } from "./js/firebase.js"
+import { publishAnnouncement } from "./js/report.js"
+
+initFirebase()
+
+document
+.getElementById("publishButton")
+.addEventListener("click", publishAnnouncement)
+
+</script>
+
+</body>
+</html>
