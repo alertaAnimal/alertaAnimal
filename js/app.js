@@ -19,14 +19,25 @@ async function createReport(reportData) {
   }
 
 
-  createReport({
-  type: "lost",
-  animal: "dog",
-  description: "brown dog with collar",
-  lat: -34.6037,
-  lng: -58.3816,
-  timestamp: Date.now(),
-  contact: ""
-});
+}
+
+
+import { getDocs } 
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+async function loadReports() {
+
+  const querySnapshot = await getDocs(
+    collection(window.db, "reports")
+  );
+
+  querySnapshot.forEach((doc) => {
+
+    const data = doc.data();
+
+    console.log(data);
+
+  });
+
 }
 

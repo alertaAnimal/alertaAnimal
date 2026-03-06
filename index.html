@@ -34,6 +34,19 @@ initFirebase()
 getDeviceId()
 initMap()
 
+createReport({
+  type: "lost",
+  animal: "dog",
+  description: "brown dog with collar",
+  lat: -34.6037,
+  lng: -58.3816,
+  timestamp: Date.now(),
+  contact: ""
+});
+
+
+loadReports();
+
 </script>
 
 <script type="module">
@@ -60,6 +73,8 @@ initMap()
   // hacemos la db accesible globalmente
   window.db = db;
 </script>
+
+
 
 </body>
 </html>
