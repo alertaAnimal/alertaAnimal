@@ -4,12 +4,14 @@ let map
 
 export async function initMap(){
 
-map = new google.maps.Map(document.getElementById("map"),{
+map = L.map('map').setView([-34.6037, -58.3816], 13)
 
-center:{lat:-34.6037,lng:-58.3816},
-zoom:13
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
-})
+maxZoom:19,
+attribution:'© OpenStreetMap'
+
+}).addTo(map)
 
 loadAnnouncements()
 
@@ -23,16 +25,9 @@ snapshot.forEach(doc=>{
 
 const data = doc.data()
 
-const marker = new google.maps.Marker({
-
-position:{
-lat:data.lat,
-lng:data.lng
-},
-
-map:map
-
-})
+L.marker([data.lat,data.lng])
+.addTo(map)
+.bindPopup(data.description || "Avistamiento")
 
 })
 
